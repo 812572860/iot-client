@@ -1,0 +1,19 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 200,
+  "trailingComma": "none",
+  "arrowParens": "avoid",
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "auto",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "eslintIntegration": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "bracketSameLine": true,
+  "proseWrap": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

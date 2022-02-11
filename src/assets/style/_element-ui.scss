@@ -1,0 +1,349 @@
+@forward 'element-plus/theme-chalk/src/common/var'with ($colors: ('primary': ('base': $--color-primary),
+    'success': ('base': $--color-success),
+    'warning': ('base': $--color-warning),
+    'danger': ('base': $--color-danger),
+    'error': ('base': $--color-error),
+    'info': ('base': $--color-info),
+  ),
+  $text-color: ('primary': $--color-text,
+    'regular': #e2e4eb,
+    'secondary': #cfd3d6,
+    'placeholder': #bbbdc5,
+  ),
+  $border-color: ('base': $--color-border-base,
+    'light': #e4e7ed,
+    'lighter': #ebeef5,
+    'extra-light': #f2f6fc,
+  ),
+  $background-color-base: $--color-background-base,
+  $input: ('text-color': $--color-text,
+    'border-color': $--color-border-base,
+    'bg-color': $--color-background-base),
+  $select-dropdown: ('bg-color': $--color-background-light,
+    'border': 1px solid $--color-border-base,
+  ),
+  $popover: ('bg-color': $--color-background-light,
+    'border-color': $--color-border-base,
+  ),
+  $pagination: ('bg-color': $--color-background-base,
+    'button-color': $--color-border-light));
+
+
+
+/* 主题颜色 */
+// $--color-primary: teal;
+/* icon font 路径, 必须提供 */
+$--font-path: '~element-plus/lib/theme-chalk/fonts';
+@use '~element-plus/theme-chalk/src/index.scss';
+
+.el-popper {
+  user-select: none;
+
+  &.is-light {
+    background-color: $--color-background-light;
+    border-color: $--color-border-base;
+  }
+
+  &.is-dark,
+  &.is-dark &__arrow::before {
+    background-color: $--color-background-dark;
+    border-color: $--color-border-base;
+  }
+
+  &__arrow {
+
+    &::before,
+    .el-popper.is-light &::before {
+      background-color: $--color-background-light;
+      border-color: $--color-border-base;
+    }
+  }
+}
+
+.el-input {
+  &__inner {
+
+    &:hover,
+    &:focus {
+      border-color: $--color-primary;
+    }
+  }
+}
+
+.el-table {
+  background-color: transparent;
+  color: $--color-text;
+  user-select: none;
+
+  &::before {
+    display: none;
+  }
+
+  thead {
+    color: $--color-text;
+    font-family: 'fangzheng-hei';
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+
+    th.el-table__cell {
+      background: linear-gradient(to bottom, #007dfa, #0031b7);
+    }
+  }
+
+  tbody {
+    .el-table__row {
+      background-color: $--color-background-base;
+    }
+
+    .el-table__row--striped {
+      background-color: $--color-background-light;
+
+      .el-table__cell {
+        background-color: $--color-background-light;
+      }
+    }
+  }
+
+  &--striped &__body tr.el-table__row--striped td.el-table__cell {
+    background: $--color-background-opacity;
+  }
+
+  &--striped &__body tr.el-table__row--striped.current-row td.el-table__cell,
+  &__body tr.current-row>td.el-table__cell {
+    background: none;
+  }
+
+  .el-table__cell {
+    border: none !important;
+
+    .cell {
+      user-select: auto;
+    }
+  }
+
+  &__body {
+    tr:hover>td.el-table__cell {
+      background: transparent !important;
+    }
+
+    .el-table__row {
+      &:hover {
+        background: url('~@/assets/images/element/table-row-hover.png') no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+
+    tr.el-table__row--striped.current-row {
+      background: url('~@/assets/images/element/table-row-hover.png') no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  &--scrollable-y &__body-wrapper {
+    height: calc(100% - 4.7rem);
+    // width: calc(100% - 0.5rem);
+  }
+}
+
+.el-select {
+  & &__tags .el-tag {
+    background-color: $--color-background-light;
+    color: $--color-text;
+  }
+}
+
+.el-select-dropdown {
+  &__item {
+    &.selected {
+      background-color: $--color-background-base;
+    }
+  }
+}
+
+.el-pagination {
+
+  background: transparent;
+  color: $--color-text;
+
+  &__total {
+    float: left;
+    color: $--color-text;
+    user-select: none;
+  }
+
+  &__sizes {
+    max-width: 12rem;
+  }
+
+  &.is-background .btn-prev,
+  &.is-background .btn-next,
+  &.is-background .el-pager li {
+    background-color: $--color-background-base;
+    border: 0.1rem solid $--color-border-light;
+    margin: 0 2px;
+    border-radius: 4px;
+
+    &:not(.disabled).active {
+      border-color: $--color-primary;
+    }
+  }
+
+  .btn-prev .el-icon,
+  .btn-next .el-icon {
+    font-size: 1.6rem;
+  }
+}
+
+.el-form {
+  &-item {
+    .el-select {
+      width: 100%
+    }
+  }
+}
+
+.el-drawer {
+  background-color: $--color-background-base;
+  border: 1px solid $--color-primary;
+
+  &.rtl {
+    border-right: none;
+    border-radius: 2rem 0 0 2rem;
+  }
+
+  &.ltl {
+    border-left: none;
+    border-radius: 0 2rem 2rem 0;
+  }
+
+  &__header {
+    margin-bottom: 0;
+  }
+
+  &__body {
+    padding: .4rem;
+  }
+}
+
+.el-tag {
+  &--info {
+    background-color: $--color-background-light;
+    color: $--color-text;
+    border-color: &$--color-border-light;
+  }
+}
+
+.el-overlay {
+  background-color: rgba(0, 10, 30, 0.8);
+
+  .el-dialog {
+    background: transparent;
+    box-shadow: none;
+
+    &__header {
+      padding: 1rem;
+    }
+
+    &__headerbtn {
+      z-index: 1;
+      top: 4.6rem;
+      right: 0.2rem;
+      width: 5.7rem;
+      height: 5.7rem;
+      padding: 0 0 1rem 1rem;
+      background: url('~@/assets/images/element/dialog-close-bg.png') no-repeat 100% 100%;
+
+      &:hover {
+        background-image: url('~@/assets/images/element/dialog-close-bg_hover.png');
+      }
+
+      .el-dialog__close {
+        color: $--color-text-primary;
+        font-family: 'iconfont' !important;
+        font-size: 1.6rem;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+
+        &::before {
+          content: '\e605';
+        }
+
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    &__title {
+      font-family: 'fangzheng-hei';
+      font-size: 2rem;
+      font-weight: bold;
+      color: $--color-text-primary;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 14rem;
+        height: 0.8rem;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      &::before {
+        background-image: url('~@/assets/images/element/dialog-title-left.png');
+        margin-right: 1rem;
+      }
+
+      &::after {
+        background-image: url('~@/assets/images/element/dialog-title-right.png');
+        margin-left: 1rem;
+      }
+    }
+
+    &__body {
+      // @include hightlight-border;
+      background-color: #012b79;
+      padding: 2.2rem 1rem 1rem;
+      min-height: 16rem;
+
+    }
+  }
+}
+
+.el-dropdown {
+  &__popper.el-popper[role=tooltip] {
+    background-color: $--color-background-base;
+    border-color: $--color-border-base;
+
+    .el-popper__arrow::before {
+      background-color: $--color-background-base;
+      border-color: $--color-border-base;
+    }
+  }
+}
+
+.primary-button {
+  background-color: transparent !important;
+  background-image: url('~@/assets/images/element/button-primary-bg.png') !important;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 1.6rem 2.8rem;
+  border: none !important;
+  color: $--color-text;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    color: $--color-text;
+    background-color: transparent;
+    background-image: url('~@/assets/images/element/button-primary-bg_hover.png') !important;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  i {
+    margin-right: 0.6rem;
+  }
+}

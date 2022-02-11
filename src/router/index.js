@@ -1,26 +1,61 @@
-import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import { createRouter, createWebHashHistory } from 'vue-router'
+import Layout from '../views/Layout.vue'
+import Login from '@/views/login'
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: '/login',
+    name: 'login',
+    component: Login
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: '/',
+    name: 'layout',
+    component: Layout,
+    redirect: '/demo',
+    children: [
+      {
+        path: 'demo',
+        name: 'demo',
+        component: () => import(/* webpackChunkName: "demo" */ '../views/Demo')
+      },
+      {
+        path: 'dictionary',
+        name: 'dictionary',
+        component: () => import(/* webpackChunkName: "dictionary" */ '../views/baseData/dictionary')
+      },
+      {
+        path: 'user',
+        name: 'user',
+        component: () => import(/* webpackChunkName: "user" */ '../views/system/user')
+      },
+      {
+        path: 'menu',
+        name: 'menu',
+        component: () => import(/* webpackChunkName: "menu" */ '../views/system/menu')
+      },
+      {
+        path: 'department',
+        name: 'department',
+        component: () => import(/* webpackChunkName: "department" */ '../views/system/department')
+      }
+    ]
   },
-];
+  {
+    path: '/401',
+    name: '401',
+    component: () => import(/* webpackChunkName: "error" */ '../views/error/401')
+  },
+  {
+    path: '/*',
+    name: '404',
+    component: () => import(/* webpackChunkName: "error" */ '../views/error/404')
+  }
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router

@@ -1,0 +1,26 @@
+/* 毛玻璃背景效果 */
+.ground-glass-bg {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #a8aaaf;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(4px);
+    z-index: -1;
+  }
+}
+
+.din-number {
+  font-family: 'din-number' !important;
+  font-weight: 600;
+}
+
+.drawer-no-modal {
+  position: inherit !important;
+}

@@ -1,0 +1,33 @@
+// 颜色值
+$--color-primary: #05cbff;
+$--color-success: #67c23a;
+$--color-warning: #e6a23c;
+$--color-danger: #f56c6c;
+$--color-error: #f22c44;
+$--color-info: #909399;
+
+$--color-background-base: rgba(0, 50, 150, 0.8);
+$--color-background-light: #1c3b7a;
+$--color-background-dark:rgb(2, 12, 31);
+$--color-background-opacity: rgba(0, 100, 169, .2);
+
+$--color-border-base: rgba(5, 203, 255, .84);
+$--color-border-light: #046d83;
+
+$--color-text:rgb(244 247 251);
+$--color-text-primary: #00ebf5;
+
+$--color-btn-background-light:#18557a;
+
+$--color-linear-bottom-blue: linear-gradient(to bottom, #007dfa, #0031b7);
+$--color-linear-bottom-orange: linear-gradient(180deg, #fff000, #ffb400) // // DIN数字字体
+// @font-face {
+//   font-family: 'din-number';
+//   src: url('~@/assets/font/DIN.ttf') format('truetype')
+// }
+
+// // 方正正中黑简体
+// @font-face {
+//   font-family: 'fangzheng-hei';
+//   src: url('~@/assets/font/FZZZHONGHJW.TTF') format('truetype');
+// }

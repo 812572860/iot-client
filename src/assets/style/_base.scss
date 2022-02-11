@@ -1,0 +1,97 @@
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  background: url('~@/assets/images/background.jpg') no-repeat 100% 100%;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gray {
+  color: #666;
+}
+
+li {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.2rem;
+  /* box-shadow: inset 0 0 3px rgba(228, 228, 228, 0.5); */
+  background: rgba(54, 215, 202, .3);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.2rem;
+  /* box-shadow: inset 0 0 3px rgba(228, 228, 228, 0.5); */
+  background: rgba(43, 160, 237, 0.18);
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfloat {
+  zoom: 1;
+}
+
+.clearfloat::after {
+  display: block;
+  clear: both;
+  content: '';
+  visibility: hidden;
+  height: 0;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-light {
+  text-align: left;
+}
+
+.in-block {
+  display: inline-block;
+}
+
+input:focus {
+  border: 1px solid #062b7a;
+}
